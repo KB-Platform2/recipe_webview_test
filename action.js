@@ -5,3 +5,11 @@ function openCamera(msg) {
         alert(err.message);
     }
 }
+
+function openGallery(msg) {
+    try {
+        openNativeGallery.postMessage(msg);
+    } catch (err) {
+        alert(err.message);
+    }
+}

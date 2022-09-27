@@ -15,5 +15,5 @@ function openGallery(msg) {
 }
 
 function getSelectedImage(base64Image) {
-    document.getElementById('selectedImage').src = "data:image/;base64," + base64Image;
+    document.getElementById('selectedImage').src = base64Image;
 }

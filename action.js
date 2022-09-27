@@ -13,3 +13,7 @@ function openGallery(msg) {
         alert(err.message);
     }
 }
+
+function  getSelectedImage(imageBytes) {
+    alert(imageBytes);
+}

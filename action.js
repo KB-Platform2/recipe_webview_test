@@ -28,3 +28,12 @@ function arrayBufferToBase64(buffer) {
     }
     return window.btoa(binary);
 }
+
+function openShare() {
+    try {
+        const currentUrl = window.location.href;
+        openNativeSharePopup.postMessage(currentUrl);
+    } catch (err) {
+        alert(err.message);
+    }
+}

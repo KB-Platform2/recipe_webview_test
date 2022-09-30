@@ -37,3 +37,11 @@ function openShare() {
         alert(err.message);
     }
 }
+
+function openLogin() {
+    try {
+        alert("로그인 되었습니다.")
+    } catch (err) {
+        alert(err.message);
+    }
+}

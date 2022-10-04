@@ -50,6 +50,7 @@ function openLogin() {
 
 function requestAppToken() {
     try {
+		alert("토큰값을 요청하였습니다.");
 		requestNativeAppToken.postMessage("requestNativeAppToken");
     } catch (err) {
         alert(err.message);

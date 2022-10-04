@@ -21,8 +21,7 @@ function getSelectedImage(base64Image) {
 
 function sendAppToken(token) {
     try {
-		alert("토큰값을 요청하였습니다.");
-		requestNativeAppToken.postMessage("requestNativeAppToken");
+		alert("토큰값을 받았습니다." + token);
     } catch (err) {
         alert(err.message);
     }

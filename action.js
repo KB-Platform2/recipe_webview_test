@@ -19,6 +19,15 @@ function getSelectedImage(base64Image) {
     document.getElementById('selectedImage').src = imgSrc;
 }
 
+function sendAppToken(String token) {
+    try {
+		alert("토큰값을 요청하였습니다.");
+		requestNativeAppToken.postMessage("requestNativeAppToken");
+    } catch (err) {
+        alert(err.message);
+    }
+}
+
 function arrayBufferToBase64(buffer) {
     let binary = '';
     let bytes = new Uint8Array(buffer);
@@ -50,7 +59,7 @@ function openLogin() {
 
 function requestAppToken() {
     try {
-		alert("토큰값을 요청하였습니다.");
+		alert("토큰값을 요청하였습니다...");
 		requestNativeAppToken.postMessage("requestNativeAppToken");
     } catch (err) {
         alert(err.message);

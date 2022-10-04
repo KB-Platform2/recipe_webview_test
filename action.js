@@ -19,7 +19,7 @@ function getSelectedImage(base64Image) {
     document.getElementById('selectedImage').src = imgSrc;
 }
 
-function sendAppToken(String token) {
+function sendAppToken(token) {
     try {
 		alert("토큰값을 요청하였습니다.");
 		requestNativeAppToken.postMessage("requestNativeAppToken");

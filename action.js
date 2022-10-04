@@ -45,3 +45,11 @@ function openLogin() {
         alert(err.message);
     }
 }
+
+function openPushNoti(msg) {
+    try {
+        openNativePushNoti.postMessage(msg);
+    } catch (err) {
+        alert(err.message);
+    }
+}

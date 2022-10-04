@@ -50,7 +50,7 @@ function openLogin() {
 
 function requestAppToken() {
     try {
-		requestAppToken.postMessage("requestAppToken");
+		requestNativeAppToken.postMessage("requestNativeAppToken");
     } catch (err) {
         alert(err.message);
     }

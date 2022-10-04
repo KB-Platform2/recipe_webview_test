@@ -48,6 +48,18 @@ function openLogin() {
     }
 }
 
+function requestAppToken() {
+    try {
+		requestAppToken.postMessage("requestAppToken");
+    } catch (err) {
+        alert(err.message);
+    }
+}
+
+
+function sendToken() {
+	
+}
 function openPushNoti(msg) {
     try {
         openNativePushNoti.postMessage(msg);

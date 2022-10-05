@@ -56,10 +56,11 @@ function openLogin() {
     }
 }
 
-function requestAppToken() {
+async function requestAppToken() {
     try {
-		alert("토큰값을 요청하였습니다...");
-		requestNativeAppToken.postMessage("requestNativeAppToken");
+		alert("토큰값을 요청하였습니다..");
+		let response = await requestNativeAppToken.postMessage("requestNativeAppToken");
+		alert("response" + response);
     } catch (err) {
         alert(err.message);
     }
@@ -69,7 +70,7 @@ function requestAppToken() {
 function sendToken() {
 	
 }
-function openPushNoti(msg) {
+async function openPushNoti(msg) {
     try {
         openNativePushNoti.postMessage(msg);
     } catch (err) {

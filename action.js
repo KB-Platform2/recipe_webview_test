@@ -19,13 +19,7 @@ function getSelectedImage(base64Image) {
     document.getElementById('selectedImage').src = imgSrc;
 }
 
-function sendAppToken(token) {
-    try {
-		alert("토큰값을 받았습니다." + token);
-    } catch (err) {
-        alert(err.message);
-    }
-}
+
 
 function arrayBufferToBase64(buffer) {
     let binary = '';
@@ -60,7 +54,15 @@ async function requestAppToken() {
     try {
 		alert("토큰값을 요청하였습니다..");
 		let response = await requestNativeAppToken.postMessage("requestNativeAppToken");
-		alert("response" + response);
+		alert("response : " + response);
+    } catch (err) {
+        alert(err.message);
+    }
+}
+
+function responseAppToken(token) {
+    try {
+		alert("토큰값을 받았습니다." + token);
     } catch (err) {
         alert(err.message);
     }

@@ -52,7 +52,7 @@ function openLogin() {
 
 async function requestAppToken() {
     try {
-		alert("토큰값을 요청하였습니다..");
+		alert("토큰값을 요청하였습니다...");
 		let response = await requestNativeAppToken.postMessage("requestNativeAppToken");
 		alert("response : " + response);
     } catch (err) {

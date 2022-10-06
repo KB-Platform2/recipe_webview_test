@@ -1,7 +1,38 @@
-// isAppReady = false;
-window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
-	// isAppReady = true;
-});
+window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {});
+
+async function requestAppToken() {
+    try {
+		alert("토큰값을 요청하였습니다.");
+		window.flutter_inappwebview.callHandler('requestAppToken')
+		  .then(function(result) {
+			console.log(JSON.stringify(result));
+			alert("토큰값을 받았습니다.\nApp Token : " + JSON.stringify(result));
+		});
+		
+    } catch (err) {
+        alert(err.message);
+    }
+}
+function openLogin() {
+	const rand = Math.floor(Math.random() * 10000000);
+    try {
+		alert("로그인 되었습니다. 토큰값이 변경되었습니다." + rand);
+		//loginNativeCheck.postMessage(rand);
+		
+		
+		window.flutter_inappwebview.callHandler('loginNativeCheck', rand)
+		  .then(function(result) {
+			console.log(JSON.stringify(result));
+			alert("Response : " + JSON.stringify(result));
+		});
+
+    } catch (err) {
+        alert(err.message);
+    }
+	
+	
+}
+
 
 
 function openCamera(msg) {
@@ -46,41 +77,9 @@ function openShare() {
     }
 }
 
-function openLogin() {
-	const rand = Math.floor(Math.random() * 10000000);
-    try {
-		alert("로그인 되었습니다. 토큰값이 변경되었습니다..." + rand);
-		//loginNativeCheck.postMessage(rand);
-		
-		
-		window.flutter_inappwebview.callHandler('loginNativeCheck', rand)
-		  .then(function(result) {
-			console.log(JSON.stringify(result));
-			alert("Receive Response" + JSON.stringify(result));
-		});
 
 
-		
-    } catch (err) {
-        alert(err.message);
-    }
-	
-	
-}
 
-async function requestAppToken() {
-    try {
-		alert("토큰값을 요청하였습니다...");
-		window.flutter_inappwebview.callHandler('requestAppToken')
-		  .then(function(result) {
-			console.log(JSON.stringify(result));
-			alert("토큰값을 받았습니다.\nApp Token : " + JSON.stringify(result));
-		});
-		
-    } catch (err) {
-        alert(err.message);
-    }
-}
 
 function responseAppToken(token) {
     try {

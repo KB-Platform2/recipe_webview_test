@@ -43,7 +43,7 @@ function openShare() {
 function openLogin() {
 	const rand = Math.floor(Math.random() * 10000000);
     try {
-		//alert("로그인 되었습니다. 토큰값이 변경되었습니다." + rand);
+		alert("로그인 되었습니다. 토큰값이 변경되었습니다." + rand);
 		//loginNativeCheck.postMessage(rand);
 		
 		window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {

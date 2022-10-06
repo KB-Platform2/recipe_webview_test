@@ -47,7 +47,7 @@ function openLogin() {
 		//loginNativeCheck.postMessage(rand);
 		
 		window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-                window.flutter_inappwebview.callHandler('loginNativeCheck(rand)')
+                window.flutter_inappwebview.callHandler('loginNativeCheck')
                   .then(function(result) {
                     console.log(JSON.stringify(result));
 					alert("Receive Response" + JSON.stringify(result));

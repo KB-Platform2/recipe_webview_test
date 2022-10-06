@@ -1,3 +1,9 @@
+isAppReady = false;
+window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
+	isAppReady = true;
+});
+
+
 function openCamera(msg) {
     try {
         openNativeCamera.postMessage(msg);
@@ -43,16 +49,15 @@ function openShare() {
 function openLogin() {
 	const rand = Math.floor(Math.random() * 10000000);
     try {
-		alert("로그인 되었습니다. 토큰값이 변경되었습니다.." + rand);
+		alert("로그인 되었습니다. 토큰값이 변경되었습니다..." + rand);
 		//loginNativeCheck.postMessage(rand);
 		
-		window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-                window.flutter_inappwebview.callHandler('loginNativeCheck', 'Message From Server JS')
-                  .then(function(result) {
-                    console.log(JSON.stringify(result));
-					alert("Receive Response" + JSON.stringify(result));
-                });
-            });
+		
+		window.flutter_inappwebview.callHandler('loginNativeCheck', 'Message From Server JS')
+		  .then(function(result) {
+			console.log(JSON.stringify(result));
+			alert("Receive Response" + JSON.stringify(result));
+		});
 
 
 		

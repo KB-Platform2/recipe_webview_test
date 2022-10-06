@@ -1,6 +1,6 @@
-isAppReady = false;
+// isAppReady = false;
 window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
-	isAppReady = true;
+	// isAppReady = true;
 });
 
 
@@ -53,7 +53,7 @@ function openLogin() {
 		//loginNativeCheck.postMessage(rand);
 		
 		
-		window.flutter_inappwebview.callHandler('loginNativeCheck', 'Message From Server JS')
+		window.flutter_inappwebview.callHandler('loginNativeCheck', rand)
 		  .then(function(result) {
 			console.log(JSON.stringify(result));
 			alert("Receive Response" + JSON.stringify(result));
@@ -66,20 +66,17 @@ function openLogin() {
     }
 	
 	
-	
-	
-	
-	
-	
-	
-	
 }
 
 async function requestAppToken() {
     try {
 		alert("토큰값을 요청하였습니다...");
-		let response = await requestNativeAppToken.postMessage("requestNativeAppToken");
-		alert("response : " + response);
+		window.flutter_inappwebview.callHandler('requestAppToken')
+		  .then(function(result) {
+			console.log(JSON.stringify(result));
+			alert("토큰값을 받았습니다.\nApp Token : " + JSON.stringify(result));
+		});
+		
     } catch (err) {
         alert(err.message);
     }

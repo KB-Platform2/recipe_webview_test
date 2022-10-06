@@ -43,11 +43,31 @@ function openShare() {
 function openLogin() {
 	const rand = Math.floor(Math.random() * 10000000);
     try {
-		alert("로그인 되었습니다. 토큰값이 변경되었습니다." + rand);
-		loginNativeCheck.postMessage(rand);
+		//alert("로그인 되었습니다. 토큰값이 변경되었습니다." + rand);
+		//loginNativeCheck.postMessage(rand);
+		
+		window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
+                window.flutter_inappwebview.callHandler('loginNativeCheck(rand)')
+                  .then(function(result) {
+                    console.log(JSON.stringify(result));
+					alert("Receive Response" + JSON.stringify(result));
+                });
+            });
+		
+		
+		
     } catch (err) {
         alert(err.message);
     }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
 async function requestAppToken() {
@@ -79,3 +99,11 @@ async function openPushNoti(msg) {
         alert(err.message);
     }
 }
+
+
+
+
+
+
+
+

@@ -59,6 +59,7 @@ function getSelectedImage(base64Image) {
 
 
 function arrayBufferToBase64(buffer) {
+    alert("buffer : " + buffer);
     let binary = '';
     let bytes = new Uint8Array(buffer);
     let len = bytes.byteLength;

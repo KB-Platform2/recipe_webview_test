@@ -1,4 +1,3 @@
-window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {});
 
 async function requestAppToken() {
     try {

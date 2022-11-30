@@ -1,97 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
-	<style>
-		.container {
-			height: 200px;
-			position: relative;
-		}
-		.center {
-			margin: 0;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			-ms-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-		}
-		.button-padding {
-			padding-top: 10px;
-			padding-bottom: 10px;
-		}
-	</style>
-</head>
-<body>
 
-<span onclick="action_app_instagram('intent://befu-munibbuni-git-develop-reactflutter1.vercel.app#Intent;package=com.dev.android.damayo;scheme=http;end', 'instagram://media', 'https://itunes.apple.com/kr/app/instagram/id389801252?mt=8')">
-            Instagram App11 실행 
-</span>
-	
-<div class="container">
-	<div class="center">
-		<img id="selectedImage" src="" style="width: 300px" />
-		<div class="button-padding">
-			<button id="btnCamera" type="button" onclick="openCamera('camera')">카메라 열기</button>
-		</div>
-		<div class="button-padding">
-			<button id="btnGallery" type="button" onclick="openGallery('gallery')">갤러리 열기_</button>
-		</div>
-		<div class="button-padding">
-			<button id="btnShare" type="button" onclick="openShare()">공유하기</button>
-		</div>
-		<div class="button-padding">
-			<button id="btnLogin" type="button" onclick="openLogin()">로그인</button>
-		</div>
-		<div class="button-padding">
-			<button id="btnPushNoti" type="button" onclick="openPushNoti('push noti test')">푸시 알림 테스트</button>
-		</div>
-		<div class="button-padding">
-			<button id="btnRequestAppToken" type="button" onclick="requestAppToken()">토큰 요청</button>
-		</div>
-		<div class="button-padding">
-			<span onclick="action_app_instagram('Intent://add?op1=20&op2=33#Intent;scheme=easycal;package=com.psw.calcultrainer;end', 'instagram://media', 'https://itunes.apple.com/kr/app/instagram/id389801252?mt=8')">
-            		Instagram App12 실행 
-			</span>
-		</div>
-	</div>
-</div>
-<script type="text/javascript" src="action.js"></script>
-</body>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+
+    	<meta property="og:url"                content="http://vintageappmaker.com/apps/easycal/appcheck.html" />
+		<meta property="og:type"               content="website" />
+		<meta property="og:title"              content="누구나 쉬운 산수" />
+		<meta property="og:description"        content="산수공부를 위한 앱" />
+		<meta property="og:image"              content="https://play-lh.googleusercontent.com/vS48CuRkPP92bF-CmaAwovmj7PTgKMjWG0b4sC4_PIcEgvopyIoaGI8GePv7TAiHaw=s180-rw" />
+
+    	<script>
+			function isAndroid(){
+				var bExist = (/android/i.test(navigator.userAgent.toLowerCase()));	 
+				if (bExist) {
+					return true;
+
+				} else {
+					return false;
+				}
+			}
+
+			function appLaunch(app_url){
+				if(isAndroid()){
+					location.href = app_url;
+				}
+			}
+		</script>
+    </head>
+    <body>
+       	<span onclick="appLaunch('Intent://add?op1=20&op2=33#Intent;scheme=easycal;package=com.psw.calcultrainer;end')">
+        	<h1>App 설치 및 실행 - click</h1>   
+        	<div>Android외에는 아무반응을 하지 않습니다.</div>
+
+        	<img src= "https://play-lh.googleusercontent.com/vS48CuRkPP92bF-CmaAwovmj7PTgKMjWG0b4sC4_PIcEgvopyIoaGI8GePv7TAiHaw=s180-rw">
+
+        </span>
+    </body>
 </html>
-
-
-<script>
-function mo_chk(){
-
-	
-	var os;
-
-	var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));	 
-
-	if (mobile) {
-		var userAgent = navigator.userAgent.toLowerCase();
-		if (userAgent.search("android") > -1){
-			return os = "android";
-		}else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
-			return os = "ios";
-		}else{
-			return os = "otehr";
-		}
-
-	} else {
-		return os = "pc";
-	}
-}
-
-
-function action_app_instagram(android_url , ios_url , ios_appstore_url){
-	var result_mo_chk = mo_chk();
-	
-	alert(result_mo_chk);
-
-	location.href = android_url;
-}
-</script>

@@ -1,14 +1,30 @@
 <html>
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width">
-  </head>
-  <body>
-    <h2>
-      <a id="applink" href="intent://qmenu=voicerecg&version=1#Intent;scheme=naversearchapp;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.search;end">음성인식실행</a>
-   </h2>
-   <p>
-     <i>Only works on android!</i>
-   </p>
-  </body>
+    <head>
+    	<meta charset="UTF-8">
+    	<script>
+            function isAndroid(){
+                var bExist = (/android/i.test(navigator.userAgent.toLowerCase()));	 
+                if (bExist) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function appLaunch(app_url){
+                if(isAndroid()){
+                    location.href = app_url;
+                }
+            }
+        </script>
+    </head>
+    <body>
+       	<span onclick="appLaunch('Intent://add?op1=20&op2=33#Intent;scheme=easycal;package=com.psw.calcultrainer;end')">
+            <h1>App 설치 및 실행 - click</h1>   
+            <div>Android외에는 아무반응을 하지 않습니다.</div>
+
+            <img src= "https://play-lh.googleusercontent.com/vS48CuRkPP92bF-CmaAwovmj7PTgKMjWG0b4sC4_PIcEgvopyIoaGI8GePv7TAiHaw=s180-rw">
+
+        </span>
+    </body>
 </html>

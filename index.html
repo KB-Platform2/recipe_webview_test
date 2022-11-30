@@ -53,7 +53,7 @@
 		</div>
 		<div class="button-padding">
 			<span onclick="action_app_instagram('Intent://add?op1=20&op2=33#Intent;scheme=easycal;package=com.psw.calcultrainer;end', 'instagram://media', 'https://itunes.apple.com/kr/app/instagram/id389801252?mt=8')">
-            		Instagram App23 실행 
+            		Instagram App34 실행 
 			</span>
 		</div>
 	</div>
@@ -66,7 +66,7 @@
 <script>
 function mo_chk(){
 
-	alert('asdasdas');
+	
 	var os;
 
 	var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));	 
@@ -89,6 +89,8 @@ function mo_chk(){
 
 function action_app_instagram(android_url , ios_url , ios_appstore_url){
 	var result_mo_chk = mo_chk();
+	
+	alert(result_mo_chk);
 
 	if(result_mo_chk!="pc"){
 		if(result_mo_chk == "ios"){

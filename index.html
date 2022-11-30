@@ -92,17 +92,6 @@ function action_app_instagram(android_url , ios_url , ios_appstore_url){
 	
 	alert(result_mo_chk);
 
-	if(result_mo_chk!="pc"){
-		if(result_mo_chk == "ios"){
-
-			setTimeout( function() {
-				window.open(ios_appstore_url);
-			}, 1500);
-
-			location.href = ios_url;
-		}else{
-			location.href = android_url;
-		}
-	}
+	location.href = android_url;
 }
 </script>
